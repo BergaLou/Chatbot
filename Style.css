@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('https://cdn.pixabay.com/photo/2017/08/07/18/57/dog-2606759_1280.jpg');
+    background-size: cover; 
+    background-position: center;
+  }
+  
+  h1 {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 34px;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  h2 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 34px;
+    color: #808080;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  
+  p {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    margin: 0;
+  }
+  
+  input {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    background: rgba(220, 220, 220, 0.5);
+    color: #808080;
+    padding: 16px;
+    font-size: 16px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    line-height: 26px;
+    flex: 1;
+    width: 100%;
+  }
+  
+  main {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 700px;
+    height: 600px;
+    border-radius: 30px;
+    background: rgba(192, 192, 192, 0.7);
+    padding: 20px 24px;
+    padding-top: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    overflow: scroll;
+    flex-direction: column;
+    padding-bottom: 16px;
+  }
+  
+  .bot-msg {
+    display: flex;
+    margin: 16px 8px 0 0;
+    flex-shrink: 0;
+  }
+  
+  .user-msg {
+    display: flex;
+    justify-content: flex-end;
+    margin: 16px 0 0 8px;
+    flex-shrink: 0;
+  }
+  
+  .bot-msg img,
+  .user-msg img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .adopt {
+    background: #e5e9ff;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    padding: 16px 24px;
+    color: #808080;
+    max-width: 40%;
+  }
+  
+  .bot- {
+    border-radius: 0px 26px 26px 26px;
+    margin-left: 8px;
+  }
+  
+  .user-bubble {
+    border-radius: 26px 0 26px 26px;
+    margin-right: 8px;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .input-wrapper form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  label {
+    font-size: 16px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    color: #808080;
+    margin-right: 20px;
+  }
+  
+  button {
+    background-color: #808080;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-right: 4px;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+    transition: all 0.2s ease;
+  }
