@@ -1,0 +1,194 @@
+/* =========================================
+   1. RESET & GRUNDINSTÄLLNINGAR
+   ========================================= */
+html {
+  background: #CCBAA6;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
+   2. LAYOUT & HEADER (Layout-fix)
+   ========================================= */
+
+/* Centrerad wrapper - Håller ihop rubrik, logga och meny */
+.wrapper {
+  max-width: 30rem;
+  /* Originalbredd för mobil */
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Rimlig maxbredd för mobil */
+/* 
+   Här är layouten du ville ha:
+   - Rad 1: Titel (vänster) och Logga (höger) bredvid varandra.
+   - Rad 2: Menyn under dem.
+*/
+/* 
+   NY LAYOUT: Flexbox
+   - header-grid: Huvudcontainer (Kolumn)
+   - logo-area: Håller ihop Titel + Logga (Rad)
+   - main-nav: Menyn (Rad, fullbredd)
+*/
+.header-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+/* Ny container för Titel & Logga */
+.logo-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* Centrera vertikalt mot varandra */
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Titel */
+.pettitle {
+  font-family: 'Geomancy', sans-serif;
+  font-size: 1.8rem;
+  /* Mobil-storlek */
+  color: #743014;
+  text-shadow: 0.2rem 0.2rem 0.2rem #0000006b;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Logga */
+.pawlogo {
+  max-width: 60px;
+  /* Mobil-storlek */
+  width: 100%;
+  height: auto;
+}
+
+/* Meny */
+.main-nav {
+  width: 100%;
+  /* Nu kan menyn ta hela bredden! */
+  margin-top: 5px;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  /* Samla länkarna i mitten istället för att sprida ut dem */
+  gap: 1.5rem;
+  /* Öka avståndet lite när de är centrerade så det inte blir för grötigt */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: nowrap;
+}
+
+.main-nav a {
+  color: #b87121;
+  text-decoration: none;
+  font-size: 0.6rem;
+  /* Något mindre på mobil för att få plats */
+  font-weight: bold;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.main-nav a:hover {
+  color: #e7e4d8;
+  text-shadow: 0.2rem 0.2rem 0.2rem #0000006b;
+}
+
+/* Objekt-fix för bilder */
+img {
+  object-fit: cover;
+}
+
+/* =========================================
+   3. BAKGRUNDSEFFEKT
+   ========================================= */
+.diagonal {
+  position: fixed;
+  top: 20%;
+  left: 0;
+  width: 70%;
+  height: 100vh;
+  background: #8a4021ce;
+  clip-path: polygon(0 0, 100% 79%, 100% 100%, 0 100%);
+  z-index: -1;
+}
+
+/* =========================================
+   4. MEDIA QUERIES (Förenklade)
+   ========================================= */
+
+/* TABLET & DESKTOP (från 768px och uppåt) */
+@media (min-width: 768px) {
+  .wrapper {
+    max-width: 40rem;
+    /* Öka bredden på surfplatta */
+    padding: 2rem;
+  }
+
+  .pettitle {
+    font-size: 3rem;
+    /* Större text på större skärmar */
+  }
+
+  .pawlogo {
+    max-width: 100px;
+    /* Större logga på större skärmar */
+  }
+
+  .main-nav a {
+    font-size: 1rem;
+    /* Originalstorlek på länkar för desktop */
+  }
+}
+
+/* STOR DESKTOP (från 1200px) */
+@media (min-width: 1200px) {
+  .wrapper {
+    max-width: 50rem;
+    /* Full bredd på desktop */
+  }
+
+  .pettitle {
+    font-size: 4.5rem;
+  }
+
+  .pawlogo {
+    max-width: 150px;
+    /* Större logga på större skärmar */
+  }
+
+  .main-nav a {
+    font-size: 1.2rem;
+    /* Originalstorlek på länkar för desktop */
+  }
+}
