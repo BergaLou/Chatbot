@@ -3,39 +3,153 @@
 
 <head>
   <meta charset="utf-8" />
-  <!-- Change the title below -->
   <title>Furshelter</title>
 
   <link rel="stylesheet" href="./style.css" />
-  <!-- dont forget the meta tag for responsiveness -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-  <div class="wrapper">
-    <header class="header-grid">
-      <div class="logo-area">
-        <h1 class="pettitle">F U R P U L S E</h1>
-        <img src="./assets/pet-friendly.png" alt="homepawlogo" class="pawlogo">
-      </div>
+  <main>
+    <div class="wrapper">
+      <header class="header-grid">
+        <div class="logo-area">
+          <h1 class="pettitle">F U R P U L S E</h1>
+          <img src="./assets/pet-friendly.png" alt="homepawlogo" class="pawlogo">
+        </div>
 
 
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#">world</a></li>
-          <li><a href="#">nearby countries</a></li>
-          <li><a href="#">local</a></li>
-          <li><a href="#">travel</a></li>
-          <li><a href="#">adopt</a></li>
-        </ul>
-      </nav>
-    </header>
-  </div>
-  <section class="">
-    <!-- The other news  -->
-  </section>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#content-world" class="nav-link">world</a></li>
+            <li><a href="#content-nearby" class="nav-link">nearby countries</a></li>
+            <li><a href="#content-local" class="nav-link">local</a></li>
+            <li><a href="#content-travel" class="nav-link">travel</a></li>
+            <li><a href="#content-adopt" class="nav-link">adopt</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
 
+
+    <div id="main-content-display">
+
+      <article class="content-article">
+        <div class="magazine-grid">
+          <div class="column-left column-stack">
+            <div id="content-world" class="content-block">
+              <div class="mag-featured">
+                <video src="./assets/wildfire.mp4" controls width="100%" style="border-radius: 1rem;"></video>
+                <div class="mag-text">
+                  <h2>Abandoned Pets Discovered After Wildfire</h2>
+                  <p>Multiple pets have been discovered in areas evacuated due to wildfire.
+                    Rescue teams are searching for owners and temporary foster homes.</p>
+                  <a href="#" class="mag-link">Read Full Story &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="content-nearby" class="content-block">
+              <div class="mag-sub-grid">
+                <div class="mag-sub-card">
+                  <h3>Injured Dogs Recovered Near Collapsed Buildings</h3>
+                  <p>Following structural damage in an urban area, injured dogs were found near collapsed buildings.
+                    The animals are receiving treatment and await relocation.</p>
+                  <a href="#" class="mag-link">Read More... &rarr;</a>
+                </div>
+                <div class="mag-sub-card">
+                  <h3>Kittens Rescued From Flooded Neighborhood</h3>
+                  <p>Several kittens were rescued from a flooded neighborhood after being trapped without access to
+                    food or clean water. Adoption efforts are ongoing.</p>
+                  <a href="#" class="mag-link">Read More... &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="content-travel" class="content-block">
+              <div class="mag-featured">
+                <img src="./assets/megadoption.jpg">
+                <div class="mag-text">
+                  <h2>Annual Mega Adoption Event This Weekend</h2>
+                  <p>Join us at the city park for our biggest adoption drive of the year. Over 50 dogs and cats are
+                    looking for their forever homes. Entry is free!</p>
+                  <a href="#" class="mag-link">Event Details &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column-right column-stack">
+            <div id="content-local" class="content-block">
+              <div class="mag-featured">
+                <img src="./assets/threedogs.jpg" alt="threedogs">
+                <div class="mag-text">
+                  <h2>Three Dogs Rescued From Neglectful Home</h2>
+                  <p>Three dogs have been taken into care after living in poor conditions in a private home.
+                    The animals are now safe and will be placed in new homes after medical checks.</p>
+                  <a href="#" class="mag-link">Meet the Pets &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="content-travel" class="content-block">
+              <div class="sidebar-ad ad-slide-1">
+                <h4>Explore the World with a Shelter Pet</h4>
+                <p>From the cafes of Paris to the beaches of Thailand, discover how accessible global travel has
+                  become for you and your furry friend.</p>
+                <button>Book Now</button>
+              </div>
+            </div>
+
+            <div id="content-travel" class="content-block">
+              <div class="mag-sub-grid">
+                <div class="mag-sub-card">
+                  <h5>Top 5 Dog Beaches</h5>
+                  <h6>Sun, sand, and paws. The best spots in Europe.</h6>
+                  <button>Read More</button>
+                </div>
+                <div class="mag-sub-card">
+                  <h5>Cat-Friendly Hotels</h5>
+                  <h6>Luxury stays that welcome your feline friends.</h6>
+                  <button>Read More</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="content-adopt" class="content-block">
+              <div class="mag-featured">
+                <img src="./assets/furryhome.jpg">
+                <div class="mag-text">
+                  <h2>Give a Furry Friend a Forever Home</h2>
+                  <p>Adopting is one of the most rewarding experiences. Browse profiles of pets waiting for a home,
+                    read success stories, and learn about the adoption process.</p>
+                  <a href="#" class="mag-link">Meet the Pets &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="content-footer" class="grid-footer">
+            <div class="mag-sub-card">
+              <h3>Success Stories</h3>
+              <p>Meet Luna, the rescue who found her family.</p>
+            </div>
+            <div class="mag-sub-card">
+              <h3>Volunteer</h3>
+              <p>Help out at your local shelter this weekend.</p>
+            </div>
+            <div class="sidebar-ad ad-travel">
+              <h4>Donate</h4>
+              <p>Support your shelter with food or blankets.</p>
+              <button>Donate</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
 
   <div class="diagonal"></div>
 

@@ -1,9 +1,7 @@
-/* =========================================
-   1. RESET & GRUNDINSTÄLLNINGAR
-   ========================================= */
 html {
   background: #CCBAA6;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -23,34 +21,17 @@ video {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 1rem;
 }
 
-/* =========================================
-   2. LAYOUT & HEADER (Layout-fix)
-   ========================================= */
-
-/* Centrerad wrapper - Håller ihop rubrik, logga och meny */
 .wrapper {
   max-width: 30rem;
-  /* Originalbredd för mobil */
   width: 100%;
   margin: 0 auto;
-  padding: 16px;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
-/* Rimlig maxbredd för mobil */
-/* 
-   Här är layouten du ville ha:
-   - Rad 1: Titel (vänster) och Logga (höger) bredvid varandra.
-   - Rad 2: Menyn under dem.
-*/
-/* 
-   NY LAYOUT: Flexbox
-   - header-grid: Huvudcontainer (Kolumn)
-   - logo-area: Håller ihop Titel + Logga (Rad)
-   - main-nav: Menyn (Rad, fullbredd)
-*/
 .header-grid {
   display: flex;
   flex-direction: column;
@@ -59,22 +40,18 @@ video {
   padding: 0.5rem;
 }
 
-/* Ny container för Titel & Logga */
 .logo-area {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* Centrera vertikalt mot varandra */
   justify-content: center;
   gap: 1rem;
   width: 100%;
 }
 
-/* Titel */
 .pettitle {
   font-family: 'Geomancy', sans-serif;
   font-size: 1.8rem;
-  /* Mobil-storlek */
   color: #743014;
   text-shadow: 0.2rem 0.2rem 0.2rem #0000006b;
   margin: 0;
@@ -82,27 +59,21 @@ video {
   line-height: 1;
 }
 
-/* Logga */
 .pawlogo {
-  max-width: 60px;
-  /* Mobil-storlek */
+  max-width: 3.75rem;
   width: 100%;
   height: auto;
 }
 
-/* Meny */
 .main-nav {
   width: 100%;
-  /* Nu kan menyn ta hela bredden! */
-  margin-top: 5px;
+  margin-top: 0.3125rem;
 }
 
 .main-nav ul {
   display: flex;
   justify-content: center;
-  /* Samla länkarna i mitten istället för att sprida ut dem */
   gap: 1.5rem;
-  /* Öka avståndet lite när de är centrerade så det inte blir för grötigt */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -112,26 +83,21 @@ video {
 .main-nav a {
   color: #b87121;
   text-decoration: none;
-  font-size: 0.6rem;
-  /* Något mindre på mobil för att få plats */
+  font-size: 0.8rem;
   font-weight: bold;
   line-height: 1;
   white-space: nowrap;
 }
 
 .main-nav a:hover {
-  color: #e7e4d8;
+  color: #fbe9d8;
   text-shadow: 0.2rem 0.2rem 0.2rem #0000006b;
 }
 
-/* Objekt-fix för bilder */
 img {
   object-fit: cover;
 }
 
-/* =========================================
-   3. BAKGRUNDSEFFEKT
-   ========================================= */
 .diagonal {
   position: fixed;
   top: 20%;
@@ -143,52 +109,217 @@ img {
   z-index: -1;
 }
 
-/* =========================================
-   4. MEDIA QUERIES (Förenklade)
-   ========================================= */
+#main-content-display {
+  margin: 1rem auto;
+  max-width: 95%;
+}
 
-/* TABLET & DESKTOP (från 768px och uppåt) */
-@media (min-width: 768px) {
+.content-article {
+  display: block;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 4rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(0.3125rem);
+  border-radius: 1.25rem;
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.05);
+}
+
+.magazine-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: left;
+}
+
+@media (min-width: 48rem) {
+  .magazine-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+}
+
+@media (min-width: 75rem) {
+  .magazine-grid {
+    grid-template-columns: 3fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.mag-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mag-featured {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 0.9375rem;
+  padding: 1.5rem;
+}
+
+.mag-image-placeholder {
+  width: 100%;
+  height: 12.5rem;
+  background: #d4b595;
+  border-radius: 0.625rem;
+  margin-bottom: 1rem;
+}
+
+.mag-sub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 37.5rem) {
+  .mag-sub-grid {
+    grid-template-columns: 1fr;
+
+  }
+}
+
+.mag-sub-card {
+  background: #fff8f0;
+  padding: 1rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.05);
+}
+
+.mag-sub-card button {
+  background: #743014;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mag-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.sidebar-ad {
+  background: #743014;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 0.9375rem;
+  text-align: center;
+}
+
+.sidebar-ad h4 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.sidebar-ad button {
+  background: #fff;
+  color: #743014;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sidebar-note {
+  background: #fffae6;
+  border: 0.0625rem solid #e0d0a0;
+  padding: 1rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  transform: none;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.main-nav a.active {
+  border-bottom: 0.125rem solid #743014;
+  color: #743014;
+}
+
+@media (min-width: 48rem) {
   .wrapper {
     max-width: 40rem;
-    /* Öka bredden på surfplatta */
     padding: 2rem;
   }
 
   .pettitle {
     font-size: 3rem;
-    /* Större text på större skärmar */
   }
 
   .pawlogo {
-    max-width: 100px;
-    /* Större logga på större skärmar */
+    max-width: 6.25rem;
   }
 
   .main-nav a {
     font-size: 1rem;
-    /* Originalstorlek på länkar för desktop */
+  }
+
+  .main-nav ul {
+    gap: 2rem;
   }
 }
 
-/* STOR DESKTOP (från 1200px) */
-@media (min-width: 1200px) {
+@media (min-width: 75rem) {
   .wrapper {
     max-width: 50rem;
-    /* Full bredd på desktop */
   }
 
   .pettitle {
-    font-size: 4.5rem;
+    font-size: 5rem;
+    white-space: nowrap;
   }
 
   .pawlogo {
-    max-width: 150px;
-    /* Större logga på större skärmar */
+    max-width: 9.375rem;
   }
 
   .main-nav a {
     font-size: 1.2rem;
-    /* Originalstorlek på länkar för desktop */
+  }
+
+  .main-nav ul {
+    gap: 4rem;
+  }
+
+  .wrapper {
+    padding: 3rem;
+  }
+
+  #main-content-display {
+    margin: 1rem auto;
+    max-width: 80%;
+  }
+}
+
+/* New Layout Classes */
+.column-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.content-block {
+  /* No specific styles needed yet, serves as a semantic wrapper */
+}
+
+.grid-footer {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 48rem) {
+  .grid-footer {
+    grid-template-columns: 1fr;
   }
 }
